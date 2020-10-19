@@ -35,7 +35,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         title = get_object_or_404(Title, pk=self.kwargs.get('title_id'))
         if Review.objects.filter(title=title, author=self.request.user).exists():
-            raise ParseError(f'Trying to create duplicate!')
+            raise ParseError('Trying to create duplicate!')
         serializer.save(author=self.request.user, title=title)
         title.rating = Review.objects.filter(title=title).aggregate(Avg('score'))['score__avg']
         title.save(update_fields=['rating'])

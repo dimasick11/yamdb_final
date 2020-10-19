@@ -1,4 +1,5 @@
 # yamdb_final
+[![Yamdb-app workflow](https://github.com/dimasick11/yamdb_final/workflows/Yamdb-app_workflow/badge.svg)](https://github.com/dimasick11/yamdb_final/actions)
 
 Учебный проект от Яндекс.Практикум, представляет собой DRF API приложение базы отзывов о фильмах, книгах и музыке с пройденым код ревью.
 

@@ -46,7 +46,7 @@ class UserAuthStage(APIView):
             send_mail('Yamdb Access code', f'confirmation_code: {pass_code}', EMAIL_HOST_USER, [user_email])
             logger.info(f'From {EMAIL_HOST_USER} sent greeting mail to {user_email}')
 
-            return Response(f"Confirmation code's sent successful", status.HTTP_200_OK)
+            return Response("Confirmation code's sent successful", status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
